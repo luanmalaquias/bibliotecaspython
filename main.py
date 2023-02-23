@@ -49,4 +49,8 @@ def verifyPasswordIntergity(password: str, numeric=True, lower=True, upper=True)
         passwordIntergity = True
 
     return passwordIntergity
-    
+
+def unmaskCpf(cpf: str) -> str:
+    """Retorna a string cpf sem pontos e traços"""
+    cpf = cpf.replace('.', '').replace('-','')
+    return cpf
