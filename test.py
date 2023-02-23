@@ -9,3 +9,6 @@ assert verifyPasswordIntergity("TESTE1234", True, False, True) == True
 
 assert unmaskCpf("000.000.000-00") == "00000000000"
 assert unmaskCpf("00000000000") == "00000000000"
+
+assert unmaskPhone("(00) 0 0000-0000") == "00000000000"
+assert unmaskPhone("00000000000") == "00000000000"

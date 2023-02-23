@@ -54,3 +54,8 @@ def unmaskCpf(cpf: str) -> str:
     """Retorna a string cpf sem pontos e traços"""
     cpf = cpf.replace('.', '').replace('-','')
     return cpf
+
+def unmaskPhone(phone: str) -> str:
+    """Retorna a string telefone sem espaços, traços e parênteses"""
+    phone = phone.replace(' ','').replace('-','').replace('(','').replace(')','')
+    return phone
