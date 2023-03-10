@@ -7,8 +7,10 @@ assert verifyPasswordIntergity("teste", False, True, False) == True
 assert verifyPasswordIntergity("teste1234", True, True, False) == True
 assert verifyPasswordIntergity("TESTE1234", True, False, True) == True
 
-assert unmaskCpf("000.000.000-00") == "00000000000"
-assert unmaskCpf("00000000000") == "00000000000"
+assert unmask(target = "000.000.000-00", chars = '.-') == "00000000000"
+assert unmask(target = 11111111111, chars = '') == "11111111111"
+assert unmask(target = "(00) 0 0000-0000", chars = '() -') == "00000000000"
 
-assert unmaskPhone("(00) 0 0000-0000") == "00000000000"
-assert unmaskPhone("00000000000") == "00000000000"
+assert cpfIsValid(cpf="254.648.550-41") == True
+assert cpfIsValid(cpf="792.039.210-10") == True
+assert cpfIsValid(cpf="348.802.540-37") == True
